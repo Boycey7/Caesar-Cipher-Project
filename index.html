@@ -1,28 +1,49 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Caesar Cipher Project</title>
     <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body>
-    <body class="bg-gray-100">
-        <div class="min-h-screen flex items-center justify-center">
-          <div class="max-w-md w-full p-6 bg-white rounded-lg shadow-lg">
-            <h1 class="text-2xl font-semibold text-center text-gray-900 mt-8 mb-6">Caesar Cipher</h1>
-            <textarea id="plaintext" placeholder="Enter plaintext" class="w-full box-border p-2 mb-6 text-base leading-6"></textarea>
-            <label for="shift" class="block mb-2">Shift:</label>
-            <select id="shift" class="w-full box-border p-2 mb-6">
-              <option value="1">1</option>
-              <option value="2">2</option>
-            </select>
-            <button onclick="encrypt()" class="bg-gradient-to-r from-cyan-400 to-cyan-600 text-white px-4 py-2 rounded-md w-full mb-6">Encrypt</button>
-            <h2 class="text-xl mb-2">Encrypted Text:</h2>
-            <textarea id="encrypted" readonly class="w-full box-border p-10"></textarea>
-            <script src="encode.js"></script>
-            <script src="decode.js"></script>
-          </div>
-        </div>
-</body>
+  </head>
+  <body class="bg-gray-100">
+    <div class="min-h-screen flex items-center justify-center">
+      <div class="max-w-md w-full p-6 bg-white rounded-lg shadow-lg">
+        <h1 class="text-2xl font-semibold text-center text-gray-900 mt-8 mb-6">
+          Caesar cipher
+        </h1>
+        <textarea
+          id="plaintext"
+          placeholder="Enter plaintext"
+          class="w-full box-border p-2 mb-6 text-base leading-6"
+        ></textarea>
+        <label for="shift" class="block mb-2">Shift:</label>
+        <select id="shift" class="w-full box-border p-2 mb-6">
+          <script>
+            // Shift from -26 to 26
+            for (let i = -26; i <= 26; i++) {
+              const option = document.createElement("option");
+              option.value = i;
+              option.textContent = i;
+              if (i === 1) {
+                option.selected = true; // Set default shift to 1
+              }
+              document.getElementById("shift").appendChild(option);
+            }
+          </script>
+        </select>
+        <button
+          onclick="encrypt()"
+          class="bg-gradient-to-r from-cyan-400 to-cyan-600 text-white px-4 py-2 rounded-md w-full mb-6">Encrypt</button>
+        <h2 class="text-xl mb-2">Encrypted Text:</h2>
+        <textarea
+          id="encrypted"
+          readonly
+          class="w-full box-border p-10"
+        ></textarea>
+        <script src="encode.js"></script>
+        <script src="decode.js"></script>
+      </div>
+    </div>
+  </body>
 </html>
