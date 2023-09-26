@@ -1,7 +1,7 @@
 //Run tests to check the function
 
 // Caesar Cipher Implementation
-function encrypt(str, shift) {
+function encode(str, shift) {
     let result = "";
   
     for (let i = 0; i < str.length; i++) {
@@ -17,9 +17,14 @@ function encrypt(str, shift) {
   
       result += char;  // Append the character to the result
     }
-
-    console.log(`Encrypted Text: ${result}`); // Output the encrypted text
+   
+    console.log(`Encoded Text: ${result}`); // Output the encoded text
     return result;  // Return the shifted text
   }
-  
+  function encodeText() {
+    const plaintext = document.getElementById("plaintext").value;
+    const shift = parseInt(document.getElementById("shift").value, 10);
+    const encryptedText = encode(plaintext, shift);
+    document.getElementById("encrypted").value = encryptedText;
+}
   // module.exports = caesarCipher;  // Export the caesarCipher function

@@ -33,13 +33,13 @@
           </script>
         </select>
         <button
-          onclick="encryptAndDisplay()"
+          onclick="encodeText()"
           class="bg-gradient-to-r from-cyan-400 to-cyan-600 text-white px-4 py-2 rounded-md w-full mb-6"
         >
           Encode
         </button>
         <button
-          onclick="decryptAndDisplay()"
+          onclick="decodeText()"
           class="bg-gradient-to-r from-red-400 to-red-600 text-white px-4 py-2 rounded-md w-full mb-6"
         >
           Decode
@@ -50,21 +50,9 @@
           readonly
           class="w-full box-border p-2 mb-6 text-base leading-6"
         ></textarea>
-        <script>
-          function testEncryptionDecryption() {
-            const plaintext = "Hello, World!";
-            const shift = parseInt(document.getElementById("shiftInput").value, 10);
-      
-            const encryptedText = encrypt(plaintext, shift);
-            console.log("Encrypted text:", encryptedText);
-      
-            const decryptedText = decrypt(encryptedText, shift);
-            console.log("Decrypted text:", decryptedText);
-          }
-        </script>
+
         <script src="encode.js"></script>
         <script src="decode.js"></script>
-        <script src="caesarCipher.js"></script>
       </div>
     </div>
   </body>
